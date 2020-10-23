@@ -3,7 +3,8 @@ import axios from 'axios';
 
 export class Menu extends React.Component {
     state = {
-        menu: []
+        menu: [],
+        items: []
     }
     
     // constructor(props){
@@ -14,7 +15,15 @@ export class Menu extends React.Component {
     // }
 
     componentDidMount(){
-        axios.get('https://entree-f18.herokuapp.com/v1/menu/12')
+        //trying to store locally 
+        if (localStorage.getItem('items') != null){
+            var items = JSON.parse(localStorage.getItem('items'));
+            this.setState({
+              items: items,
+            })
+          } 
+          console.log("Component Did Mount")
+        axios.get('https://entree-f18.herokuapp.com/v1/menu/15')
         // let apiURL = 'https://entree-f18.herokuapp.com/v1/menu/12'
         // const axiosData = axios.get(apiURL)
             .then(res => {
@@ -23,6 +32,7 @@ export class Menu extends React.Component {
                 console.log("line 23", this.state.menu)
 
             });
+
         
         }
  
@@ -31,11 +41,11 @@ export class Menu extends React.Component {
 <div>
     
  <ul className="list-group">
-        <h2> Menu </h2>
+        
     {this.state.menu.map(menu =>
      <div>
-        <li className="list-group-item d-flex justify-content-between        align-items-center">      
-            {menu.description.split(' with ')[0]}     
+        <li className="list-group-item d-flex justify-content-between        align-items-center" >      
+            {menu.description.split(' and ')[0]}     
                 <span 
                     className="badge badge-primary badge-pill badge-dark text-right"
                 >

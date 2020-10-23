@@ -6,11 +6,13 @@ class Header extends React.Component{
         return(
         <div>
         <h1>Great Restaurant Name</h1>
+        <h5>123 Creativity Ln</h5>
+        <h5> 24 hours / 7 days</h5>
         <div>
             <button 
                 onClick={this.props.switchModeAppetizers}
                 type="button" 
-                className="btn btn-sm btn-outline-secondary m-1"
+                className="btn btn-lg btn-outline-secondary m-2"
                 > 
                 Appetizers
             </button>
@@ -18,7 +20,7 @@ class Header extends React.Component{
             <button 
                 onClick={this.props.switchModeLunch} 
                 type="button"                    
-                className="btn btn-sm btn-outline-secondary m-1"
+                className="btn btn-lg btn-outline-secondary m-2"
                 >
                 Lunch
             </button>
@@ -26,7 +28,7 @@ class Header extends React.Component{
             <button 
                 onClick={this.props.switchModeMain}
                 type="button" 
-                className="btn btn-sm btn-outline-secondary m-1"
+                className="btn btn-lg btn-outline-secondary m-2"
                 > 
                 Main Course 
             </button>
@@ -34,7 +36,7 @@ class Header extends React.Component{
             <button 
                 onClick={this.props.switchModeSides}
                 type="button" 
-                className="btn btn-sm btn-outline-secondary m-1"
+                className="btn btn-lg btn-outline-secondary m-2"
                 > 
                 Sides
             </button>
@@ -42,7 +44,7 @@ class Header extends React.Component{
             <button 
                 onClick={this.props.switchModeDessert}
                 type="button" 
-                className="btn btn-sm btn-outline-secondary m-1"
+                className="btn btn-lg btn-outline-secondary m-2"
                 > 
                 Dessert
             </button>

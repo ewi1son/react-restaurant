@@ -31,15 +31,15 @@ export class Appetizers extends React.Component {
 <div>
     
  <ul className="list-group">
-        <h2> Appetizers </h2>
+        
     {this.state.menu.map(menu =>
      <div>
-        <li className="list-group-item d-flex justify-content-between        align-items-center">      
+        <li className="list-group-item d-flex justify-content-between        align-items-center" >      
             {menu.description.split(' with ')[0]}     
                 <span 
                     className="badge badge-primary badge-pill badge-dark text-right"
                 >
-                    ${(menu.description.length)*2}
+                    ${Math.floor((menu.description.length)/3)}
                 </span>
         </li>
         {/* <li>{menu.description}</li> */}
